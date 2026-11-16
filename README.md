@@ -2,8 +2,6 @@
 
 Website für einen Beauty-Salon mit eigener Academy in Neuss. Entstanden in meinem 8-wöchigen Schülerpraktikum 2026, direkt im Salon.
 
-**Live (Testseite):** https://testseite-abbysbeautysalon.netlify.app/
-
 ![Startseite](docs/startseite.png)
 
 ## Was die Seite kann
@@ -17,7 +15,6 @@ Website für einen Beauty-Salon mit eigener Academy in Neuss. Entstanden in mein
 ## Technik
 
 * HTML, CSS und JavaScript ohne Framework
-* Hosting auf Netlify
 
 ```
 index.html, ueber-uns.html, ...   Seiten
@@ -38,4 +35,3 @@ bilder/                           Fotos und Logos
 * Design umgesetzt und mit der Inhaberin abgestimmt
 * Texte, Fotos und Logos eingebaut, Logos freigestellt
 * Warenkorb in JavaScript geschrieben
-* Seite auf Netlify veröffentlicht
