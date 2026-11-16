@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abby's Beauty Salon &amp; Academy – Neuss</title>
+<meta name="description" content="Salon-Behandlungen, Academy-Kurse und Shop von Abby's Beauty Salon &amp; Academy in Neuss.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop-style.css">
+<style>
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1.8rem; }
+  .service-tile { background: var(--cream); border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: var(--shadow-card); padding: 2rem 1.8rem; text-align: center; display: flex; flex-direction: column; align-items: center; }
+  .service-icon { width: 64px; height: 64px; border-radius: 50%; border: 1.3px solid var(--forest); color: var(--forest); background: color-mix(in srgb, var(--forest) 8%, var(--cream)); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+  .service-icon .icon { width: 28px; height: 28px; }
+  .service-tile h3 { font-size: 1.25rem; margin-bottom: 0.6rem; }
+  .service-tile p { color: var(--ink-muted); font-size: 0.9rem; margin-bottom: 1.3rem; }
+  .service-tile a { font-size: 0.85rem; font-weight: 600; color: var(--forest-dark); display: inline-flex; align-items: center; gap: 0.4rem; margin-top: auto; }
+  .service-tile a .icon { width: 15px; height: 15px; transition: transform .3s var(--ease); }
+  .service-tile a:hover .icon { transform: translateX(4px); }
+
+  .pillar-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.8rem; }
+  .pillar-card { position: relative; border-radius: var(--radius-lg); overflow: hidden; min-height: 20rem; display: flex; align-items: flex-end; box-shadow: var(--shadow-card); }
+  .pillar-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(18,37,26,0.82), rgba(18,37,26,0.25)); }
+  .pillar-shop::before { background: linear-gradient(0deg, rgba(18,37,26,0.85), rgba(18,37,26,0.3)); }
+  .pillar-academy::before { background: linear-gradient(0deg, rgba(110,52,85,0.85), rgba(110,52,85,0.3)); }
+  .pillar-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1; }
+  .pillar-content { position: relative; z-index: 1; padding: 2.2rem; color: var(--cream); }
+  .pillar-content .eyebrow { color: var(--pink); margin-bottom: 0.6rem; }
+  .pillar-content h3 { color: var(--cream); font-size: 1.7rem; margin-bottom: 0.6rem; }
+  .pillar-content p { color: rgba(255,253,249,0.85); font-size: 0.92rem; margin-bottom: 1.4rem; max-width: 24rem; }
+
+  @media (max-width: 760px) { .pillar-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="announce-bar">Versandkostenfrei ab 60&nbsp;€ Bestellwert &middot; Abholung im Salon in Neuss jederzeit möglich</div>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="index.html" class="logo">
+      <img src="bilder/logo.png" alt="Abby's Beauty Salon &amp; Academy" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html" class="is-current" aria-current="page">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="shop.html">Shop</a>
+      <a href="dienstleistungen.html">Dienstleistungen</a>
+      <a href="kurse.html">Academy</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Warenkorb öffnen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html" class="is-current">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="shop.html">Shop</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="kurse.html">Academy</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Warenkorb">
+  <div class="cart-drawer-head">
+    <h2 class="font-display">Warenkorb</h2>
+    <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <a href="checkout.html" class="btn-primary cart-checkout is-disabled" id="checkoutBtn">Zur Kasse</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="hero-content">
+      <p class="eyebrow">Neuss · Salon &amp; Academy</p>
+      <h1 class="hero-title font-display">Wo Schönheit<br>Handwerk wird.</h1>
+      <p class="hero-sub">Salon-Behandlungen, eine eigene Academy und ein Shop für zuhause – Abby's Beauty Salon &amp; Academy vereint alles, was du für deinen Look brauchst, an einem Ort in Neuss.</p>
+      <a href="kontakt.html" class="btn-primary">Termin vereinbaren
+        <svg class="icon" style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-panel hero-panel--main">
+        <img src="bilder/hero-shop.jpg" alt="" class="hero-photo">
+      </div>
+      <div class="hero-panel hero-panel--accent">
+        <img src="bilder/logo.png" alt="" class="hero-logo">
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider" aria-hidden="true">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M12 3c0 6-6 6-6 12s6 6 6 6 6 0 6-6-6-6-6-12z"/></svg>
+  </div>
+
+  <section class="shop-section container" id="dienstleistungen">
+    <div class="shop-heading">
+      <p class="eyebrow">Unsere Dienstleistungen</p>
+      <h2 class="font-display">Behandlungen im Salon</h2>
+    </div>
+    <div class="service-grid">
+      <div class="service-tile">
+        <div class="service-icon">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6.3 6.3l2.5 2.5M15.2 15.2l2.5 2.5M6.3 17.7l2.5-2.5M15.2 8.8l2.5-2.5"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <h3 class="font-display">Kosmetik &amp; Gesicht</h3>
+        <p>Gesichtsbehandlungen, Peelings und Pflege-Rituale für strahlend gepflegte Haut.</p>
+        <a href="dienstleistungen.html?kategorie=kosmetik">Leistungen ansehen
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="service-tile">
+        <div class="service-icon">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2h6v4l2 3v11a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V9l2-3V2z"/><path d="M9 6h6"/></svg>
+        </div>
+        <h3 class="font-display">Nageldesign &amp; Fußpflege</h3>
+        <p>Maniküre, Pediküre und Nageldesign – klassisch bis kunstvoll, ganz nach Anlass.</p>
+        <a href="dienstleistungen.html?kategorie=naegel">Leistungen ansehen
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+      <div class="service-tile">
+        <div class="service-icon">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c4 0 5 2 9 2s5-2 9-2M4 12c4 0 5 2 9 2s5-2 9-2M4 19c4 0 5 2 9 2s5-2 9-2"/></svg>
+        </div>
+        <h3 class="font-display">Flechten</h3>
+        <p>Rastazöpfe, Twists, Cornrows und Crochets – Wunschfrisuren mit Erfahrung geflochten.</p>
+        <a href="dienstleistungen.html?kategorie=flechten">Leistungen ansehen
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="shop-section container">
+    <div class="pillar-grid">
+      <div class="pillar-card pillar-shop">
+        <img src="bilder/wig-lace-black.jpg" alt="">
+        <div class="pillar-content">
+          <p class="eyebrow">Shop</p>
+          <h3 class="font-display">Wigs, Pflege &amp; Gutscheine</h3>
+          <p>Echthaar-Extensions und Pflege in Salonqualität, direkt zu dir nach Hause.</p>
+          <a href="shop.html" class="btn-primary">Shop entdecken</a>
+        </div>
+      </div>
+      <div class="pillar-card pillar-academy">
+        <img src="bilder/academy-banner.jpg" alt="">
+        <div class="pillar-content">
+          <p class="eyebrow">Academy</p>
+          <h3 class="font-display">Werde selbst zur Expertin</h3>
+          <p>Workshops und Zertifikatskurse der Abby's Academy – jetzt bewerben.</p>
+          <a href="kurse.html" class="btn-primary">Academy ansehen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <h2 class="font-display">Bleib auf dem Laufenden</h2>
+      <p>Neue Kollektionen, freie Kursplätze und Salon-Angebote – direkt in dein Postfach.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" id="newsletterEmail">
+        <button type="submit" class="btn-primary">Anmelden</button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+        Danke! Du bist jetzt Teil der Abby's Community.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand-statement">Handwerk aus dem Salon,<br>für dein Zuhause.</p>
+        <p class="footer-tagline">Abby's Beauty Salon &amp; Academy verbindet Haarkunst in Salonqualität mit fundierter Ausbildung – in Neuss und ab sofort auch bei dir zuhause.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/abbys.beautysalon/" aria-label="Instagram – Salon" title="Instagram – Salon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Salon</span></a>
+          <a href="https://www.instagram.com/abbys.beautysalonnails/" aria-label="Instagram – Nägel" title="Instagram – Nägel" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Nägel</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>Abby's Beauty Salon &amp; Academy</p>
+        <p>Marienstraße 10<br>41462 Neuss</p>
+        <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        <a href="tel:+4921312632315">02131 / 26 32 315</a>
+      </div>
+      <div class="footer-col">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag — geschlossen</p>
+        <p>Di – Fr — 9:00–18:00</p>
+        <p>Samstag — 9:00–14:00</p>
+        <p>Sonntag — geschlossen</p>
+      </div>
+      <div class="footer-col">
+        <h3>Service</h3>
+        <a href="shop.html">Shop</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kurse.html">Academy</a>
+        <a href="kontakt.html">Termin buchen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abby's Beauty Salon &amp; Academy</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="versand.html">Versandbedingungen</a>
+        <a href="widerruf.html">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shop-cart.js"></script>
+</body>
+</html>

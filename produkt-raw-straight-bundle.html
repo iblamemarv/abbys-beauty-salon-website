@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAW Straight Hair Bundle – Abby's Beauty Salon &amp; Academy</title>
+<meta name="description" content="RAW Straight Hair Bundle – 100% unverarbeitetes Single Donor Raw Hair. Ab 95,00 €.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop-style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="announce-bar">Versandkostenfrei ab 60&nbsp;€ Bestellwert &middot; Abholung im Salon in Neuss jederzeit möglich</div>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="index.html" class="logo">
+      <img src="bilder/logo.png" alt="Abby's Beauty Salon &amp; Academy" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="shop.html" class="is-current" aria-current="page">Shop</a>
+      <a href="dienstleistungen.html">Dienstleistungen</a>
+      <a href="kurse.html">Academy</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Warenkorb öffnen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="shop.html" class="is-current">Shop</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="kurse.html">Academy</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Warenkorb">
+  <div class="cart-drawer-head">
+    <h2 class="font-display">Warenkorb</h2>
+    <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <a href="checkout.html" class="btn-primary cart-checkout is-disabled" id="checkoutBtn">Zur Kasse</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <section class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="shop.html">Shop</a><span class="sep">/</span>
+      <a href="shop-wigs.html">Wigs &amp; Extensions</a><span class="sep">/</span>
+      <span class="current">RAW Straight Hair Bundle</span>
+    </nav>
+
+    <div class="product-detail">
+      <div class="product-detail-media">
+        <img src="bilder/wig-raw-straight-bundle.jpg" alt="RAW Straight Hair Bundle">
+      </div>
+      <div class="product-detail-info">
+        <p class="eyebrow">Bundles</p>
+        <h1 class="font-display">RAW Straight Hair Bundle</h1>
+        <p class="product-detail-tagline">100% unverarbeitetes Single Donor Raw Hair, glatte Textur – Einzelpreise</p>
+
+        <div class="product-detail-price" id="detailPrice">95,00 €</div>
+        <p class="product-detail-vat-note">inkl. MwSt., zzgl. Versandkosten</p>
+
+        <label class="variant-row product-detail-variant">
+          <span class="variant-label">Länge</span>
+          <select class="variant-select" id="lengthSelect">
+            <option value="10&quot;" data-price="95">10"</option>
+            <option value="12&quot;" data-price="95">12"</option>
+            <option value="14&quot;" data-price="95">14"</option>
+            <option value="16&quot;" data-price="95">16"</option>
+            <option value="18&quot;" data-price="95">18"</option>
+            <option value="20&quot;" data-price="175">20"</option>
+            <option value="22&quot;" data-price="175">22"</option>
+            <option value="24&quot;" data-price="175">24"</option>
+            <option value="26&quot;" data-price="175">26"</option>
+            <option value="28&quot;" data-price="175">28"</option>
+            <option value="30&quot;" data-price="175">30"</option>
+          </select>
+        </label>
+
+        <button class="btn-primary product-detail-add" type="button" id="detailAddBtn">In den Warenkorb</button>
+      </div>
+    </div>
+
+    <div class="product-sections">
+      <div class="product-section">
+        <h2 class="font-display">Beschreibung</h2>
+        <p>Unsere Virgin Hair Extensions überzeugen durch ihre hochwertige Verarbeitung, ihre natürliche Struktur und ein gepflegtes Erscheinungsbild. Sie lassen sich vielseitig stylen, fügen sich harmonisch in das Eigenhaar ein und sorgen für ein natürliches, volles Ergebnis. Ideal für alle, die Wert auf Qualität, Langlebigkeit und ein schönes Finish legen.</p>
+      </div>
+      <div class="product-section">
+        <h2 class="font-display">Anwendung</h2>
+        <p>Unsere Virgin Hair lässt sich optimal für Sew-Ins und andere professionelle Einarbeitungstechniken verwenden.</p>
+      </div>
+      <div class="product-section">
+        <h2 class="font-display">Material/Qualität</h2>
+        <p>Hochwertiges Vietnamese Virgin Mischhaar – sorgfältig ausgewählt und verarbeitet für ein natürliches Erscheinungsbild.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <h2 class="font-display">Bleib auf dem Laufenden</h2>
+      <p>Neue Kollektionen, freie Kursplätze und Salon-Angebote – direkt in dein Postfach.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" id="newsletterEmail">
+        <button type="submit" class="btn-primary">Anmelden</button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+        Danke! Du bist jetzt Teil der Abby's Community.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand-statement">Handwerk aus dem Salon,<br>für dein Zuhause.</p>
+        <p class="footer-tagline">Abby's Beauty Salon &amp; Academy verbindet Haarkunst in Salonqualität mit fundierter Ausbildung – in Neuss und ab sofort auch bei dir zuhause.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/abbys.beautysalon/" aria-label="Instagram – Salon" title="Instagram – Salon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Salon</span></a>
+          <a href="https://www.instagram.com/abbys.beautysalonnails/" aria-label="Instagram – Nägel" title="Instagram – Nägel" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Nägel</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>Abby's Beauty Salon &amp; Academy</p>
+        <p>Marienstraße 10<br>41462 Neuss</p>
+        <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        <a href="tel:+4921312632315">02131 / 26 32 315</a>
+      </div>
+      <div class="footer-col">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag — geschlossen</p>
+        <p>Di – Fr — 9:00–18:00</p>
+        <p>Samstag — 9:00–14:00</p>
+        <p>Sonntag — geschlossen</p>
+      </div>
+      <div class="footer-col">
+        <h3>Service</h3>
+        <a href="shop.html">Shop</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kurse.html">Academy</a>
+        <a href="kontakt.html">Termin buchen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abby's Beauty Salon &amp; Academy</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="versand.html">Versandbedingungen</a>
+        <a href="widerruf.html">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shop-cart.js"></script>
+<script>
+  var lengthSelect = document.getElementById('lengthSelect');
+  var detailPrice = document.getElementById('detailPrice');
+  var detailAddBtn = document.getElementById('detailAddBtn');
+
+  function currentPrice() {
+    return Number(lengthSelect.selectedOptions[0].dataset.price);
+  }
+  function refreshPrice() {
+    detailPrice.textContent = formatPrice(currentPrice());
+  }
+  lengthSelect.addEventListener('change', refreshPrice);
+
+  detailAddBtn.addEventListener('click', function () {
+    var product = {
+      id: 'w9-' + lengthSelect.value.replace('"', ''),
+      cat: 'wigs',
+      name: 'RAW Straight Hair Bundle',
+      price: currentPrice(),
+      img: 'bilder/wig-raw-straight-bundle.jpg'
+    };
+    addToCart(product, 'Länge: ' + lengthSelect.value);
+    detailAddBtn.textContent = 'Hinzugefügt';
+    setTimeout(function () { detailAddBtn.textContent = 'In den Warenkorb'; }, 1200);
+    openCart();
+  });
+</script>
+</body>
+</html>

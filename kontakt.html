@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt – Abby's Beauty Salon &amp; Academy</title>
+<meta name="description" content="Termin vereinbaren oder Kontakt aufnehmen mit Abby's Beauty Salon &amp; Academy in Neuss.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop-style.css">
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 3rem; padding: 1rem 0 4.5rem; align-items: start; }
+  .contact-info-list { display: flex; flex-direction: column; gap: 1.4rem; margin-top: 1.6rem; }
+  .contact-info-item { display: flex; gap: 0.9rem; align-items: flex-start; }
+  .contact-info-item .icon { width: 21px; height: 21px; color: var(--forest); flex-shrink: 0; margin-top: 0.15rem; }
+  .contact-info-item h3 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+  .contact-info-item p, .contact-info-item a { font-size: 0.9rem; color: var(--ink-muted); display: block; }
+  .contact-map {
+    margin-top: 1.8rem; aspect-ratio: 16/10; border-radius: var(--radius-md); overflow: hidden;
+    border: 1px solid var(--border); background: var(--beige-soft);
+  }
+  .contact-map iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  .contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.1rem; background: var(--cream); padding: 2rem; border-radius: var(--radius-md); box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+  .contact-form .full { grid-column: 1 / -1; }
+  .contact-form label { display: flex; flex-direction: column; gap: 0.4rem; font-size: 0.82rem; font-weight: 600; color: var(--ink-muted); }
+  .contact-form input, .contact-form select, .contact-form textarea {
+    border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--beige-soft);
+    padding: 0.7rem 0.85rem; font-size: 0.92rem; font-family: var(--font-body); color: var(--ink);
+  }
+  .contact-form textarea { resize: vertical; min-height: 7rem; }
+  .contact-form .btn-primary { justify-self: start; margin-top: 0.4rem; }
+  .contact-success { display: none; align-items: center; gap: 0.6rem; font-weight: 600; color: var(--forest-dark); margin-top: 1rem; }
+  .contact-success .icon { width: 20px; height: 20px; }
+
+  @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } .contact-form { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="announce-bar">Versandkostenfrei ab 60&nbsp;€ Bestellwert &middot; Abholung im Salon in Neuss jederzeit möglich</div>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="index.html" class="logo">
+      <img src="bilder/logo.png" alt="Abby's Beauty Salon &amp; Academy" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="shop.html">Shop</a>
+      <a href="dienstleistungen.html">Dienstleistungen</a>
+      <a href="kurse.html">Academy</a>
+      <a href="kontakt.html" class="is-current" aria-current="page">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Warenkorb öffnen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="shop.html">Shop</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="kurse.html">Academy</a>
+    <a href="kontakt.html" class="is-current">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Warenkorb">
+  <div class="cart-drawer-head">
+    <h2 class="font-display">Warenkorb</h2>
+    <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <a href="checkout.html" class="btn-primary cart-checkout is-disabled" id="checkoutBtn">Zur Kasse</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <section class="category-header container">
+    <div class="category-header-main">
+      <div class="category-icon-badge" style="--accent:#1E3B2C">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+      </div>
+      <div>
+        <h1 class="font-display">Kontakt</h1>
+        <p>Termin vereinbaren, Fragen zum Shop oder einfach Hallo sagen – wir melden uns persönlich zurück.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">So erreichst du uns</p>
+        <div class="contact-info-list">
+          <div class="contact-info-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6-7-11a7 7 0 0 1 14 0c0 5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <div><h3>Adresse</h3><p>Marienstraße 10<br>41462 Neuss</p></div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.9.7 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.4a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.8 2z"/></svg>
+            <div><h3>Telefon</h3><a href="tel:+4921312632315">02131 / 26 32 315</a></div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 6l8 7 8-7"/></svg>
+            <div><h3>E-Mail</h3><a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a></div>
+          </div>
+          <div class="contact-info-item">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+            <div>
+              <h3>Öffnungszeiten</h3>
+              <p>Di – Fr 9:00–18:00 &middot; Sa 9:00–14:00<br>Mo &amp; So geschlossen</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps?q=Marienstra%C3%9Fe%2010%2C%2041462%20Neuss&output=embed"
+            title="Standort Abby's Beauty Salon &amp; Academy, Marienstraße 10, 41462 Neuss"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm" method="POST">
+        <input type="hidden" name="subject" value="Neue Kontaktanfrage über die Website">
+        <input type="hidden" name="from_name" value="Abby's Beauty Salon Website">
+        <p hidden><label>Bitte nicht ausfüllen: <input name="botcheck"></label></p>
+        <label>Name
+          <input type="text" name="name" id="contactName" required>
+        </label>
+        <label>E-Mail
+          <input type="email" name="email" required>
+        </label>
+        <label>Telefon
+          <input type="tel" name="phone">
+        </label>
+        <label>Anliegen
+          <select name="anliegen">
+            <option>Termin für eine Behandlung</option>
+            <option>Frage zum Shop</option>
+            <option>Frage zur Academy</option>
+            <option>Sonstiges</option>
+          </select>
+        </label>
+        <label class="full">Nachricht
+          <textarea name="message" placeholder="Wie können wir dir helfen?"></textarea>
+        </label>
+        <div class="full">
+          <button type="submit" class="btn-primary">Nachricht senden</button>
+          <p class="contact-success" id="contactSuccess">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+            Vielen Dank! Deine Nachricht ist bei uns eingegangen – wir melden uns zeitnah zurück.
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand-statement">Handwerk aus dem Salon,<br>für dein Zuhause.</p>
+        <p class="footer-tagline">Abby's Beauty Salon &amp; Academy verbindet Haarkunst in Salonqualität mit fundierter Ausbildung – in Neuss und ab sofort auch bei dir zuhause.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/abbys.beautysalon/" aria-label="Instagram – Salon" title="Instagram – Salon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Salon</span></a>
+          <a href="https://www.instagram.com/abbys.beautysalonnails/" aria-label="Instagram – Nägel" title="Instagram – Nägel" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Nägel</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>Abby's Beauty Salon &amp; Academy</p>
+        <p>Marienstraße 10<br>41462 Neuss</p>
+        <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        <a href="tel:+4921312632315">02131 / 26 32 315</a>
+      </div>
+      <div class="footer-col">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag — geschlossen</p>
+        <p>Di – Fr — 9:00–18:00</p>
+        <p>Samstag — 9:00–14:00</p>
+        <p>Sonntag — geschlossen</p>
+      </div>
+      <div class="footer-col">
+        <h3>Service</h3>
+        <a href="shop.html">Shop</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kurse.html">Academy</a>
+        <a href="kontakt.html">Termin buchen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abby's Beauty Salon &amp; Academy</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="versand.html">Versandbedingungen</a>
+        <a href="widerruf.html">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shop-cart.js"></script>
+<script>
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var leistung = params.get('leistung');
+    if (leistung) {
+      var anliegenSelect = document.querySelector('#contactForm select[name="anliegen"]');
+      var messageField = document.querySelector('#contactForm textarea[name="message"]');
+      if (anliegenSelect) anliegenSelect.value = 'Termin für eine Behandlung';
+      if (messageField) messageField.value = 'Ich interessiere mich für: ' + leistung + '\n\nWunschtermin: ';
+    }
+  })();
+
+  /* ===================================================================
+     HIER DEINEN WEB3FORMS-SCHLÜSSEL EINTRAGEN
+     1. Auf https://web3forms.com eure E-Mail eingeben
+     2. Den zugeschickten Access Key unten zwischen die Anführungszeichen kopieren
+     Solange hier nichts steht, öffnet sich wie bisher das E-Mail-Programm,
+     damit keine Anfrage verloren geht.
+     =================================================================== */
+  var WEB3FORMS_KEY = '958c1ab4-abfe-491c-85ad-57bb862c7804';
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var form = e.target;
+    var f = form;
+
+    // Fallback: kein Schlüssel hinterlegt -> wie bisher per E-Mail-Programm
+    if (!WEB3FORMS_KEY) {
+      var subject = 'Kontaktanfrage: ' + f.anliegen.value;
+      var body = 'Name: ' + f.name.value + '\nE-Mail: ' + f.email.value + '\nTelefon: ' + f.phone.value +
+        '\nAnliegen: ' + f.anliegen.value + '\n\nNachricht:\n' + f.message.value;
+      window.location.href = 'mailto:abbysbeautysalon.academy@gmail.com?subject=' +
+        encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      document.getElementById('contactSuccess').style.display = 'flex';
+      return;
+    }
+
+    var btn = form.querySelector('button[type="submit"]');
+    var originalLabel = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Wird gesendet…';
+
+    var data = new FormData(form);
+    data.append('access_key', WEB3FORMS_KEY);
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    }).then(function (res) { return res.json(); })
+      .then(function (json) {
+        if (!json.success) throw new Error(json.message || 'Fehler');
+        form.reset();
+        document.getElementById('contactSuccess').style.display = 'flex';
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+      }).catch(function () {
+        btn.textContent = originalLabel;
+        btn.disabled = false;
+        alert('Das Senden hat leider nicht geklappt. Bitte schreib uns direkt an abbysbeautysalon.academy@gmail.com oder ruf uns an: 02131 / 26 32 315');
+      });
+  });
+</script>
+</body>
+</html>

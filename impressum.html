@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Abby's Beauty Salon &amp; Academy</title>
+<meta name="description" content="Impressum von Abby's Beauty Salon &amp; Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop-style.css">
+<style>
+  .legal-notice {
+    max-width: 44rem; margin: 0 auto 3rem; background: color-mix(in srgb, var(--rose-text) 10%, var(--cream));
+    border: 1px solid var(--rose-text); border-radius: var(--radius-md); padding: 1.3rem 1.5rem; font-size: 0.88rem; color: var(--ink);
+  }
+  .legal-notice strong { color: var(--rose-text); }
+  .legal-sections { max-width: 44rem; margin: 0 auto; display: flex; flex-direction: column; gap: 2.2rem; padding-bottom: 4.5rem; }
+  .legal-sections h2 { font-size: 1.3rem; margin-bottom: 0.6rem; }
+  .legal-sections p, .legal-sections li { color: var(--ink-muted); font-size: 0.92rem; line-height: 1.75; }
+  .legal-sections ul { padding-left: 1.2rem; }
+  .legal-sections a { color: var(--forest-dark); text-decoration: underline; }
+  .placeholder-tag { display: inline-block; font-size: 0.68rem; letter-spacing: 0.04em; text-transform: uppercase; background: var(--beige-soft); border: 1px solid var(--border); color: var(--ink-muted); padding: 0.15rem 0.5rem; border-radius: 999px; margin-left: 0.4rem; }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="announce-bar">Versandkostenfrei ab 60&nbsp;€ Bestellwert &middot; Abholung im Salon in Neuss jederzeit möglich</div>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="index.html" class="logo">
+      <img src="bilder/logo.png" alt="Abby's Beauty Salon &amp; Academy" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="shop.html">Shop</a>
+      <a href="dienstleistungen.html">Dienstleistungen</a>
+      <a href="kurse.html">Academy</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Warenkorb öffnen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="shop.html">Shop</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="kurse.html">Academy</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Warenkorb">
+  <div class="cart-drawer-head">
+    <h2 class="font-display">Warenkorb</h2>
+    <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <a href="checkout.html" class="btn-primary cart-checkout is-disabled" id="checkoutBtn">Zur Kasse</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <section class="category-header container">
+    <div class="category-header-main">
+      <div class="category-icon-badge" style="--accent:#1E3B2C">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M9 13h6M9 17h6"/></svg>
+      </div>
+      <div>
+        <h1 class="font-display">Impressum</h1>
+        <p>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="legal-notice">
+      <strong>Hinweis:</strong> Diese Seite ist ein Standard-Impressum-Gerüst mit Platzhaltern. Sie ersetzt keine Rechtsberatung. Bitte alle markierten Felder mit echten Angaben füllen und im Zweifel von einem:einer Rechtsanwält:in oder Steuerberater:in prüfen lassen, insbesondere Register-, USt-ID- und Rechtsform-Angaben.
+    </div>
+
+    <div class="legal-sections">
+      <div>
+        <h2 class="font-display">Angaben gemäß § 5 DDG</h2>
+        <p>
+          Abby's Beauty Salon &amp; Academy<br>
+          Inhaberin: [Vollständiger Name einfügen]<span class="placeholder-tag">Platzhalter</span><br>
+          Marienstraße 10<br>
+          41462 Neuss<br>
+          Deutschland
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Kontakt</h2>
+        <p>
+          Telefon: 02131 / 26 32 315<br>
+          E-Mail: <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        </p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Vertreten durch</h2>
+        <p>[Name der vertretungsberechtigten Person, z.&nbsp;B. Inhaber:in oder Geschäftsführung]<span class="placeholder-tag">Platzhalter</span></p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Registereintrag</h2>
+        <p>Falls im Handelsregister, Vereinsregister, Partnerschaftsregister oder Genossenschaftsregister eingetragen: Registergericht und Registernummer hier ergänzen. Bei einem Einzelunternehmen ohne Registereintrag entfällt dieser Abschnitt.<span class="placeholder-tag">Platzhalter</span></p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Umsatzsteuer-ID</h2>
+        <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: [USt-ID einfügen, falls vorhanden]<span class="placeholder-tag">Platzhalter</span></p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+        <p>[Name, Anschrift wie oben]<span class="placeholder-tag">Platzhalter</span></p>
+      </div>
+
+      <div>
+        <h2 class="font-display">EU-Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Verbraucherstreitbeilegung</h2>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen. <span class="placeholder-tag">Bitte prüfen</span></p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Haftung für Links</h2>
+        <p>Unser Angebot enthält gegebenenfalls Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+      </div>
+
+      <div>
+        <h2 class="font-display">Urheberrecht</h2>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand-statement">Handwerk aus dem Salon,<br>für dein Zuhause.</p>
+        <p class="footer-tagline">Abby's Beauty Salon &amp; Academy verbindet Haarkunst in Salonqualität mit fundierter Ausbildung – in Neuss und ab sofort auch bei dir zuhause.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/abbys.beautysalon/" aria-label="Instagram – Salon" title="Instagram – Salon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Salon</span></a>
+          <a href="https://www.instagram.com/abbys.beautysalonnails/" aria-label="Instagram – Nägel" title="Instagram – Nägel" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Nägel</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>Abby's Beauty Salon &amp; Academy</p>
+        <p>Marienstraße 10<br>41462 Neuss</p>
+        <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        <a href="tel:+4921312632315">02131 / 26 32 315</a>
+      </div>
+      <div class="footer-col">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag — geschlossen</p>
+        <p>Di – Fr — 9:00–18:00</p>
+        <p>Samstag — 9:00–14:00</p>
+        <p>Sonntag — geschlossen</p>
+      </div>
+      <div class="footer-col">
+        <h3>Service</h3>
+        <a href="shop.html">Shop</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kurse.html">Academy</a>
+        <a href="kontakt.html">Termin buchen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abby's Beauty Salon &amp; Academy</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="versand.html">Versandbedingungen</a>
+        <a href="widerruf.html">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shop-cart.js"></script>
+</body>
+</html>

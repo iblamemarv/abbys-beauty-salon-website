@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dienstleistungen – Abby's Beauty Salon &amp; Academy</title>
+<meta name="description" content="Kosmetik &amp; Gesicht, Nägel und Haare – Behandlungen von Abby's Beauty Salon &amp; Academy in Neuss. Termin anfragen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shop-style.css">
+<style>
+  .cancellation-notice {
+    max-width: 46rem; margin: 0 auto 2.4rem; background: color-mix(in srgb, var(--rose-gold) 10%, var(--cream));
+    border: 1px solid color-mix(in srgb, var(--rose-gold) 35%, var(--border)); border-radius: var(--radius-md);
+    padding: 1.1rem 1.4rem; font-size: 0.86rem; line-height: 1.6; color: var(--ink-muted); text-align: center;
+  }
+  .cancellation-notice strong { color: var(--ink); }
+  .cancellation-notice a { color: var(--forest-dark); text-decoration: underline; }
+  .category-icon-badge {
+    position: relative; border-color: transparent;
+    background: color-mix(in srgb, var(--rose-gold) 12%, var(--cream));
+  }
+  .category-icon-badge::before {
+    content: ''; position: absolute; inset: 0; border-radius: 50%; padding: 1.5px;
+    background: linear-gradient(135deg, #E8C4A0, var(--rose-gold), #D4A489, var(--rose-gold));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+  }
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+
+<div class="announce-bar">Termine nach Vereinbarung &middot; Salon in Neuss</div>
+
+<header class="site-header">
+  <div class="header-inner container">
+    <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileNav">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <a href="index.html" class="logo">
+      <img src="bilder/logo.png" alt="Abby's Beauty Salon &amp; Academy" class="logo-img">
+    </a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <a href="index.html">Home</a>
+      <a href="ueber-uns.html">Über uns</a>
+      <a href="shop.html">Shop</a>
+      <a href="dienstleistungen.html" class="is-current" aria-current="page">Dienstleistungen</a>
+      <a href="kurse.html">Academy</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-toggle" id="cartToggle" aria-label="Warenkorb öffnen">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg>
+        <span class="cart-badge" id="cartBadge" style="display:none;">0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+    <a href="index.html">Home</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="shop.html">Shop</a>
+    <a href="dienstleistungen.html" class="is-current">Dienstleistungen</a>
+    <a href="kurse.html">Academy</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+</header>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true" aria-label="Warenkorb">
+  <div class="cart-drawer-head">
+    <h2 class="font-display">Warenkorb</h2>
+    <button class="cart-close" id="cartClose" aria-label="Warenkorb schließen">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <div class="cart-body" id="cartBody"></div>
+  <div class="cart-footer">
+    <div class="cart-total-row"><span>Gesamt</span><span id="cartTotal">0,00 €</span></div>
+    <a href="checkout.html" class="btn-primary cart-checkout is-disabled" id="checkoutBtn">Zur Kasse</a>
+  </div>
+</aside>
+
+<main id="main">
+
+  <section class="category-header container">
+    <div class="category-header-main">
+      <div class="category-icon-badge" style="--accent:#B8826E">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6L12 3z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15z"/></svg>
+      </div>
+      <div>
+        <h1 class="font-display">Dienstleistungen</h1>
+        <p>Kosmetik &amp; Gesichtsbehandlungen, Nageldesign &amp; Fußpflege und Flechten – in Salonqualität. Den passenden Termin sprechen wir persönlich mit dir ab.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="cancellation-notice">
+      <strong>Terminhinweis:</strong> Bitte sage uns rechtzeitig Bescheid, falls du einen Termin nicht wahrnehmen kannst – idealerweise mindestens 24 Stunden vorher. So können wir den Platz an eine andere Kundin vergeben. Bei kurzfristigen Absagen oder Nichterscheinen behalten wir uns vor, eine Ausfallgebühr zu berechnen. Genaue Stornobedingungen entnimmst du unseren <a href="agb.html">AGB</a>.
+    </div>
+  </section>
+
+  <section class="shop-section container">
+    <div class="filter-bar" id="subFilterBar">
+      <button class="filter-pill is-active" type="button" data-sub="all">Alle</button>
+      <button class="filter-pill" type="button" data-sub="kosmetik">Kosmetik &amp; Gesichtsbehandlungen</button>
+      <button class="filter-pill" type="button" data-sub="naegel">Nageldesign &amp; Fußpflege</button>
+      <button class="filter-pill" type="button" data-sub="flechten">Flechten</button>
+    </div>
+
+    <div class="flechten-intro">
+      <h2 class="font-display">Wir sind deine Experten fürs Flechten!</h2>
+      <p>Ob Rastas, Crochets oder Cornrows – unser Team kreiert deine Wunschfrisur mit Leidenschaft und Erfahrung. Bring gerne ein Inspirationsbild mit oder lass dich spontan beraten. Wir sorgen dafür, dass du unseren Salon mit einem Look verlässt, den du liebst.</p>
+    </div>
+
+    <div class="shop-grid" id="shopGrid"></div>
+  </section>
+
+  <section class="newsletter">
+    <div class="newsletter-inner">
+      <h2 class="font-display">Bleib auf dem Laufenden</h2>
+      <p>Neue Kollektionen, freie Kursplätze und Salon-Angebote – direkt in dein Postfach.</p>
+      <form class="newsletter-form" id="newsletterForm">
+        <input type="email" required placeholder="Deine E-Mail-Adresse" aria-label="E-Mail-Adresse" id="newsletterEmail">
+        <button type="submit" class="btn-primary">Anmelden</button>
+      </form>
+      <p class="newsletter-success" id="newsletterSuccess">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>
+        Danke! Du bist jetzt Teil der Abby's Community.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <p class="footer-brand-statement">Handwerk aus dem Salon,<br>für dein Zuhause.</p>
+        <p class="footer-tagline">Abby's Beauty Salon &amp; Academy verbindet Haarkunst in Salonqualität mit fundierter Ausbildung – in Neuss und ab sofort auch bei dir zuhause.</p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/abbys.beautysalon/" aria-label="Instagram – Salon" title="Instagram – Salon" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Salon</span></a>
+          <a href="https://www.instagram.com/abbys.beautysalonnails/" aria-label="Instagram – Nägel" title="Instagram – Nägel" target="_blank" rel="noopener"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg><span>Nägel</span></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Kontakt</h3>
+        <p>Abby's Beauty Salon &amp; Academy</p>
+        <p>Marienstraße 10<br>41462 Neuss</p>
+        <a href="mailto:abbysbeautysalon.academy@gmail.com">abbysbeautysalon.academy@gmail.com</a>
+        <a href="tel:+4921312632315">02131 / 26 32 315</a>
+      </div>
+      <div class="footer-col">
+        <h3>Öffnungszeiten</h3>
+        <p>Montag — geschlossen</p>
+        <p>Di – Fr — 9:00–18:00</p>
+        <p>Samstag — 9:00–14:00</p>
+        <p>Sonntag — geschlossen</p>
+      </div>
+      <div class="footer-col">
+        <h3>Service</h3>
+        <a href="shop.html">Shop</a>
+        <a href="dienstleistungen.html">Dienstleistungen</a>
+        <a href="kurse.html">Academy</a>
+        <a href="kontakt.html">Termin buchen</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Abby's Beauty Salon &amp; Academy</span>
+      <div class="footer-legal">
+        <a href="impressum.html">Impressum</a>
+        <a href="agb.html">AGB</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        <a href="versand.html">Versandbedingungen</a>
+        <a href="widerruf.html">Widerrufsrecht</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="shop-cart.js"></script>
+<script>
+  // PLATZHALTER-PREISE — bitte mit echten Preisen ersetzen. Fotos fehlen noch (img ergänzen,
+  // sonst zeigt die Karte das Medaillon-Platzhalter-Icon), dann bilder/... eintragen.
+  var PRODUCTS = [
+    { id: 'd1', cat: 'services', sub: 'kosmetik', name: 'Gesichtsbehandlungen', desc: 'Kosmetische Gesichtsbehandlung, Tiefenreinigung und individuelle Hautpflegeberatung.', img: 'bilder/dienstleistung-gesicht.jpg', priceFrom: 'ab 55,00 €', bookingUrl: 'kontakt.html?leistung=Gesichtsbehandlungen', variants: [] },
+    { id: 'd2', cat: 'services', sub: 'kosmetik', name: 'Make-Up', desc: 'Klassisches Make-up für den Alltag oder als Braut Make-up für deinen besonderen Anlass.', img: 'bilder/dienstleistung-styling.jpg', priceFrom: 'ab 45,00 €', bookingUrl: 'kontakt.html?leistung=Make-Up', variants: [] },
+    { id: 'd3', cat: 'services', sub: 'kosmetik', name: 'Wimpernbehandlungen', desc: 'Lifting, Färben und Pflege der Wimpern.', price: 25, bookingUrl: 'kontakt.html?leistung=Wimpernbehandlungen', variants: [] },
+    { id: 'd4', cat: 'services', sub: 'kosmetik', name: 'Zahnaufhellung', desc: 'Für ein strahlendes Lächeln.', price: 89, bookingUrl: 'kontakt.html?leistung=Zahnaufhellung', variants: [] },
+    { id: 'd5', cat: 'services', sub: 'naegel', name: 'Nageldesign', desc: 'Professionelles Nageldesign im Salon in Neuss oder mobil bei dir zuhause, nach Vereinbarung.', priceFrom: 'ab 35,00 €', bookingUrl: 'kontakt.html?leistung=Nageldesign', variants: [] },
+    { id: 'd6', cat: 'services', sub: 'naegel', name: 'Fußpflege', desc: 'Kosmetische Fußpflege im Salon oder mobil, ganz nach deinem Bedarf.', img: 'bilder/dienstleistung-pedikuere.jpg', priceFrom: 'ab 35,00 €', bookingUrl: 'kontakt.html?leistung=Fu%C3%9Fpflege', variants: [] },
+    { id: 'd7', cat: 'services', sub: 'naegel', name: 'Maniküre & Pediküre', desc: 'Klassische Hand- und Fußpflege für gepflegte Nägel.', img: 'bilder/dienstleistung-manikuere.jpg', price: 45, bookingUrl: 'kontakt.html?leistung=Manik%C3%BCre%20%26%20Pedik%C3%BCre', variants: [] },
+    { id: 'd8', cat: 'services', sub: 'naegel', name: 'Nagelmodellage & Nail Art', desc: 'Acrylgel und Gel, French Nails, Babyboomer Nails, Naturnägelverstärkung, Auffüllen und Reparaturen sowie individuelle Nail Art – für jeden Anlass.', img: 'bilder/dienstleistung-gel.jpg', priceFrom: 'ab 40,00 €', bookingUrl: 'kontakt.html?leistung=Nagelmodellage%20%26%20Nail%20Art', variants: [] },
+    { id: 'd9', cat: 'services', sub: 'naegel', name: 'Handspa & Pflegebehandlungen', desc: 'Entspannung und Pflege für Hände und Nägel.', price: 29, bookingUrl: 'kontakt.html?leistung=Handspa%20%26%20Pflegebehandlungen', variants: [] },
+    { id: 'd10', cat: 'services', sub: 'flechten', name: 'Flechtfrisuren', desc: 'Rastazöpfe, Twists, Cornrows oder Crochets – wir flechten deinen Wunschlook, individuell und mit Erfahrung.', img: 'bilder/dienstleistung-haare-schnitt.jpg', priceFrom: 'ab 60,00 €', bookingUrl: 'kontakt.html?leistung=Flechtfrisuren', variants: [] },
+  ];
+  initSubFilter(PRODUCTS);
+
+  // Deep-Link von der Startseite: ?kategorie=kosmetik|naegel|haare selektiert den passenden Filter.
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var kategorie = params.get('kategorie');
+    if (!kategorie) return;
+    var btn = document.querySelector('#subFilterBar .filter-pill[data-sub="' + kategorie + '"]');
+    if (btn) btn.click();
+  })();
+</script>
+</body>
+</html>
